@@ -1,0 +1,127 @@
+<openerp>
+<data>
+
+ <record model="ir.ui.view" id="mydb_mytable_tree_vtfuytfutuiew">
+   <field name="model">mytable</field>
+   <field name="type">tree</field>
+   <field name="arch" type="xml">
+       <tree>
+           <field name="name"/>
+           <field name="contact_no"/>
+           <field name="email"/>
+       </tree>
+   </field> 
+</record>
+
+<record model="ir.ui.view" id="book_form_viewhfhru">
+   <field name="name">mytable.form</field>
+   <field name="model">mytable</field>
+   <field name="type">form</field>
+   <field name="arch" type="xml">
+    <form string="Book">
+        <sheet>
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="name"/>
+                            </div>
+                            <h1>
+                                <field name="name"/>
+                            </h1>
+                            <div class="oe_edit_only">
+                                <label for="contact_no"/>
+                            </div>
+                            <h1>
+                                <field name="contact_no"/>
+                            </h1>
+                            <div class="oe_edit_only">
+                                <label for="email"/>
+                            </div>
+                            <h1>
+                                <field name="email"/>
+                            </h1>
+                         </div>
+                         <group>
+                            <!--fields-->
+                        </group>
+
+                 <notebook>
+                         <page string="Information">
+                                <group col="2">
+                                     <!-- <field name="name"/> -->
+                                     <field name="contact_no"/>
+                                     <field name="email"/>
+                                 </group>
+                                <newline/>
+                                <group col="2">
+                                    <field name="name"/>
+                                    <button name="get_random_password" string="Generate" type="object" groups="it.group_it_mod"
+                                            confirm="Are you sure?" colspan="1" icon="gtk-convert"/>
+                                    <button name="encrypt_password" type="object" string="Encrypt" confirm="Are you sure?"
+                                            icon="gtk-execute" colspan="1"  attrs=""/>
+                                    <button name="decrypt_password" type="object" string="Decrypt" icon="gtk-print"
+                                            colspan="1" attrs=""/>
+                                  
+                                </group> 
+                              </page>
+                             <!--  <page string="Account">
+                                <group col="4">
+                                     <field name="name"/>
+                                     <field name="contact_no"/>
+                                     <field name="email"/>
+                                 </group>
+                                <newline/>
+                                <group col="5">
+                                    <field name="name"/>
+                                    <button name="get_random_password" string="Generate" type="object" groups="it.group_it_mod"
+                                            confirm="Are you sure?" colspan="1" icon="gtk-convert"/>
+                                    <button name="encrypt_password" type="object" string="Encrypt" confirm="Are you sure?"
+                                            icon="gtk-execute" colspan="1"  attrs=""/>
+                                    <button name="decrypt_password" type="object" string="Decrypt" icon="gtk-print"
+                                            colspan="1" attrs=""/>
+
+                                </group>
+                            </page>
+                          <page string="OBC">
+                                <group col="4">
+                                     <field name="name"/>
+                                     <field name="contact_no"/>
+                                     <field name="email"/>
+                                 </group>
+                                <newline/>
+                                <group col="5">
+                                    <field name="name"/>
+                                    <button name="get_random_password" string="Generate" type="object" groups="it.group_it_mod"
+                                            confirm="Are you sure?" colspan="1" icon="gtk-convert"/>
+                                    <button name="encrypt_password" type="object" string="Encrypt" confirm="Are you sure?"
+                                            icon="gtk-execute" colspan="1"  attrs=""/>
+                                    <button name="decrypt_password" type="object" string="Decrypt" icon="gtk-print"
+                                            colspan="1" attrs=""/>
+
+                                </group>
+                            </page> -->
+
+
+
+               </notebook> 
+
+       </sheet>
+
+   </form>
+  </field>
+</record>
+
+<record model = "ir.actions.act_window" id = "action_contact">
+   <field name="name">Add New Contact</field>
+   <field name="res_model">mytable</field>
+   <field name="view_type">form</field>
+   <field name="view_mode">tree,form</field>
+   <field name = "help" type = "html">
+        <p class = "oe_view_noncontent_create">Click Create to add new Contact Record.</p>
+   </field>
+</record>
+
+<menuitem id = "contact" name= "Contact Management"/>
+<menuitem id = "contact_menu" name = "Contact Information Management" parent = "contact"/>
+<menuitem id = " contact_info_menu" name = "Contact" parent ="contact_menu" action = "action_contact"/>
+</data>
+</openerp>

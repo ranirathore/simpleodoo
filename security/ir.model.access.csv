@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_contact,varbin.contact,model_mytable,group_user_id,1,1,1,0
+access_read_contact,varbin.contact_read,model_mytable,group_read_user_id,1,0,0,0
