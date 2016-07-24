@@ -1,0 +1,2 @@
+# simpleodoo
+Odoo Simple Test
